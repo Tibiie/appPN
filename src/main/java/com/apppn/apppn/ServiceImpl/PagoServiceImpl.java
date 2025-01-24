@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import com.apppn.apppn.DTO.Request.InventoryDTO;
 import com.apppn.apppn.DTO.Request.PagoDTO;
@@ -200,7 +201,7 @@ public class PagoServiceImpl implements PagoService {
 
         List<Pago> pagos = pagoRepository.findByfechaPagoBetween(fechaPagoInicio, fechaPagoFinal);
 
-        if (Objects.isNull(pagos)) {
+        if (CollectionUtils.isEmpty(pagos)) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Pago no encontrado");
         }
         return ResponseEntity.status(HttpStatus.OK).body(pagos);
