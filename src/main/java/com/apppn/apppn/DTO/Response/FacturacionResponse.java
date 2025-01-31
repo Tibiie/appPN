@@ -5,7 +5,6 @@ import java.util.Date;
 import java.util.List;
 
 import com.apppn.apppn.Models.Cuotas;
-import com.apppn.apppn.Models.PlanPagos;
 
 public class FacturacionResponse {
 
@@ -40,10 +39,5 @@ public class FacturacionResponse {
     public void setCuotas(List<Cuotas> cuotas) {
         this.cuotas = cuotas;
     }
-
-    
-
-
-    
 
 }
